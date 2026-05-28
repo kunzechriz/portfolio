@@ -164,3 +164,18 @@ function openDemoModal() {
         </div>
     `;
 }
+
+function openMLModal() {
+    modal.style.display = "block";
+    modalBody.innerHTML = `
+        <h2 style="color: var(--accent-color); margin-bottom: 1rem;">California Housing ML Analysis</h2>
+        <div style="color: var(--text-secondary); line-height: 1.6;">
+            <p style="margin-bottom: 1rem;">This project involves predicting house prices in California using a Support Vector Regression (SVR) machine learning model.</p>
+            <p style="margin-bottom: 1rem;">The dataset features attributes like location, median income, and housing age. I implemented a complete data preprocessing pipeline, including feature scaling with StandardScaler.</p>
+            <p style="margin-bottom: 1rem;">To optimize model performance, I utilized GridSearch for hyperparameter tuning, finding the best combination of parameters (C, epsilon, kernel) for the SVR model. The project demonstrates a fundamental understanding of supervised learning, data preparation, and model evaluation using Scikit-Learn.</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://github.com/kunzechriz/L-MCI-BSc-Data-Science-I" target="_blank" class="btn" style="text-decoration: none; display: inline-block;">View Repository on GitHub</a>
+            </div>
+        </div>
+    `;
+}
