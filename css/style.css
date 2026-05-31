@@ -404,6 +404,82 @@ section {
 }
 
 /* =========================================
+   GLOBE SECTION
+   ========================================= */
+.globe-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.globe-info-panel h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.globe-info-panel p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.visited-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.country-tag {
+    font-size: 0.85rem;
+    font-family: var(--font-heading);
+    padding: 0.4rem 1rem;
+    background: rgba(0, 255, 204, 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+.country-tag:hover {
+    background: rgba(0, 255, 204, 0.2);
+    transform: translateY(-2px);
+}
+
+.globe-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.globe-container:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 900px) {
+    .globe-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .globe-container {
+        height: 350px;
+    }
+}
+
+/* =========================================
    FOOTER
    ========================================= */
 footer {
