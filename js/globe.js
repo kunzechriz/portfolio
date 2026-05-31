@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Colors
     const accentColor = '#00ffcc'; // matches var(--accent-color)
-    const defaultCountryColor = 'rgba(255, 255, 255, 0.25)'; // Lighter so it's visible against water
+    const defaultCountryColor = 'rgba(255, 255, 255, 0.15)'; // Between 0.05 and 0.25
     const visitedCountryColor = 'rgba(0, 255, 204, 0.5)';
     const hoverColor = 'rgba(0, 255, 204, 0.8)';
 
