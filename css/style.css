@@ -135,22 +135,11 @@ nav {
 
 .hero-mechatronics-icons {
     display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    flex-direction: row;
+    gap: 1rem;
+    font-size: clamp(2rem, 5vw, 4rem);
     color: var(--accent-color);
-    opacity: 0.8;
-    filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.4));
-}
-
-.float-icon-1 { animation: floatIcon 3s ease-in-out infinite; }
-.float-icon-2 { animation: floatIcon 3.5s ease-in-out infinite 0.5s; }
-.float-icon-3 { animation: floatIcon 4s ease-in-out infinite 1s; }
-
-@keyframes floatIcon {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
+    opacity: 0.9;
 }
 
 .hero-title {

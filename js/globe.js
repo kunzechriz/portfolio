@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Colors
     const accentColor = '#00ffcc'; // matches var(--accent-color)
-    const defaultCountryColor = 'rgba(255, 255, 255, 0.05)';
-    const visitedCountryColor = 'rgba(0, 255, 204, 0.4)';
+    const defaultCountryColor = 'rgba(255, 255, 255, 0.25)'; // Lighter so it's visible against water
+    const visitedCountryColor = 'rgba(0, 255, 204, 0.5)';
     const hoverColor = 'rgba(0, 255, 204, 0.8)';
 
     // Helper to check if country is visited (handles ISO_A3 and ADM0_A3 differences like France)
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             world.polygonsData(countries.features);
             
             // Set initial camera view (zoomed out to see the whole earth)
-            world.pointOfView({ lat: 20, lng: 10, altitude: 2.8 });
+            world.pointOfView({ lat: 20, lng: 10, altitude: 3.8 });
         });
 
     // Auto-rotate
