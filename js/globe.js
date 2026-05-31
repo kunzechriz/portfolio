@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             world.polygonsData(countries.features);
             
             // Set initial camera view (zoomed out to see the whole earth)
-            world.pointOfView({ lat: 20, lng: 10, altitude: 5 });
+            world.pointOfView({ lat: 20, lng: 10, altitude: 10});
         });
 
     // Auto-rotate
