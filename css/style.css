@@ -125,10 +125,37 @@ nav {
     display: block;
 }
 
+.hero-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
+}
+
+.hero-mechatronics-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    color: var(--accent-color);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.4));
+}
+
+.float-icon-1 { animation: floatIcon 3s ease-in-out infinite; }
+.float-icon-2 { animation: floatIcon 3.5s ease-in-out infinite 0.5s; }
+.float-icon-3 { animation: floatIcon 4s ease-in-out infinite 1s; }
+
+@keyframes floatIcon {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
 .hero-title {
     font-size: clamp(3rem, 8vw, 6rem);
     line-height: 1.1;
-    margin-bottom: 1.5rem;
     background: linear-gradient(135deg, #fff 0%, #666 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

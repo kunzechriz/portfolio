@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const visitedCountryColor = 'rgba(0, 255, 204, 0.4)';
     const hoverColor = 'rgba(0, 255, 204, 0.8)';
 
+    // Helper to check if country is visited (handles ISO_A3 and ADM0_A3 differences like France)
+    const isVisited = (d) => visitedCountries.includes(d.properties.ISO_A3) || visitedCountries.includes(d.properties.ADM0_A3);
+
     // Init Globe
     const world = Globe()
         (globeVizContainer)
@@ -31,20 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
         .atmosphereAltitude(0.15)
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg') // Dark themed earth
         .polygonsData([])
-        .polygonAltitude(d => visitedCountries.includes(d.properties.ISO_A3) ? 0.02 : 0.01)
-        .polygonCapColor(d => visitedCountries.includes(d.properties.ISO_A3) ? visitedCountryColor : defaultCountryColor)
+        .polygonAltitude(d => isVisited(d) ? 0.02 : 0.01)
+        .polygonCapColor(d => isVisited(d) ? visitedCountryColor : defaultCountryColor)
         .polygonSideColor(() => 'rgba(0, 0, 0, 0.2)')
         .polygonStrokeColor(() => '#111')
         .polygonLabel(({ properties: d }) => `
             <div style="background: rgba(10, 10, 12, 0.9); padding: 8px 12px; border-radius: 4px; border: 1px solid ${accentColor}; font-family: 'Inter', sans-serif; color: #fff;">
                 <b>${d.ADMIN}</b>
-                ${visitedCountries.includes(d.ISO_A3) ? '<br><span style="color: #00ffcc; font-size: 0.8rem;">Visited</span>' : ''}
+                ${visitedCountries.includes(d.ISO_A3) || visitedCountries.includes(d.ADM0_A3) ? '<br><span style="color: #00ffcc; font-size: 0.8rem;">Visited</span>' : ''}
             </div>
         `)
         .onPolygonHover(hoverD => {
             world
-                .polygonAltitude(d => d === hoverD ? 0.06 : (visitedCountries.includes(d.properties.ISO_A3) ? 0.02 : 0.01))
-                .polygonCapColor(d => d === hoverD ? hoverColor : (visitedCountries.includes(d.properties.ISO_A3) ? visitedCountryColor : defaultCountryColor));
+                .polygonAltitude(d => d === hoverD ? 0.06 : (isVisited(d) ? 0.02 : 0.01))
+                .polygonCapColor(d => d === hoverD ? hoverColor : (isVisited(d) ? visitedCountryColor : defaultCountryColor));
         })
         .polygonsTransitionDuration(300);
 
@@ -54,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(countries => {
             world.polygonsData(countries.features);
             
-            // Set initial camera view (centered around Europe/Africa as a nice starting point)
-            world.pointOfView({ lat: 20, lng: 10, altitude: 2.2 });
+            // Set initial camera view (zoomed out to see the whole earth)
+            world.pointOfView({ lat: 20, lng: 10, altitude: 2.8 });
         });
 
     // Auto-rotate
