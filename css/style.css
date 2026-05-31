@@ -121,6 +121,10 @@ nav {
     font-family: var(--font-heading);
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
 .hero-title {
     font-size: clamp(3rem, 8vw, 6rem);
     line-height: 1.1;
