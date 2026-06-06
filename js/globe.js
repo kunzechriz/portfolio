@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Germany: DEU, Austria: AUT, Switzerland: CHE, Italy: ITA, Spain: ESP,
     // France: FRA, Slovenia: SVN, Morocco: MAR, Indonesia: IDN, Philippines: PHL,
     // Vietnam: VNM, Japan: JPN, Australia: AUS, New Zealand: NZL, USA: USA, 
-    // Mexico: MEX, China: CHN
+    // Mexico: MEX, China: CHN, Croatia: HRV, Netherlands: NLD
     const visitedCountries = [
-        'DEU', 'AUT', 'CHE', 'ITA', 'ESP', 'FRA', 'SVN', 
-        'MAR', 'IDN', 'PHL', 'VNM', 'JPN', 'AUS', 'NZL', 
-        'USA', 'MEX', 'CHN'
+        'DEU', 'AUT', 'CHE', 'ITA', 'ESP', 'FRA', 'SVN',
+        'MAR', 'IDN', 'PHL', 'VNM', 'JPN', 'AUS', 'NZL',
+        'USA', 'MEX', 'CHN', 'HRV', 'NLD'
     ];
 
     // Colors
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(res => res.json())
         .then(countries => {
             world.polygonsData(countries.features);
-            
+
             // Set initial camera view (zoomed out to see the whole earth)
             world.pointOfView({ lat: 20, lng: 10, altitude: 5});
         });
