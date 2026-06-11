@@ -494,12 +494,52 @@ footer {
     font-size: 0.9rem;
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    z-index: 101;
+}
+
 /* =========================================
    RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 12, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--card-border);
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
     .timeline-item {
         grid-template-columns: 1fr;
+        padding: 1.5rem;
     }
     
     .timeline-meta {
@@ -511,10 +551,30 @@ footer {
     
     .section-title {
         font-size: 2rem;
+        margin-bottom: 2rem;
     }
     
     .hero-title {
         font-size: 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .project-info {
+        padding: 1.5rem;
+    }
+
+    .globe-container {
+        height: 300px;
+    }
+    
+    .bg-orb {
+        width: 300px;
+        height: 300px;
+        top: 30%;
+        right: -10%;
     }
 }
 
