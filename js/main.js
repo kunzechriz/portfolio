@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 3. Timeline Items Animation (Experience & Education)
-    gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+    // 3. Timeline Items Animation (Journey)
+    gsap.utils.toArray('.timeline-node').forEach((item, i) => {
         gsap.from(item, {
             scrollTrigger: {
                 trigger: item,
@@ -72,6 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 0.8,
             ease: "power3.out",
             delay: i * 0.1 // Stagger effect
+        });
+    });
+
+    // Timeline Click Interaction
+    document.querySelectorAll('.timeline-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const node = header.closest('.timeline-node');
+            node.classList.toggle('active');
         });
     });
 
