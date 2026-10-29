@@ -202,16 +202,19 @@ function openDemoModal() {
     `;
 }
 
-function openMLModal() {
+function openPrinnthubModal() {
     modal.style.display = "block";
     modalBody.innerHTML = `
-        <h2 style="color: var(--accent-color); margin-bottom: 1rem;">California Housing ML Analysis</h2>
+        <h2 style="color: var(--accent-color); margin-bottom: 1rem;">prINNthub – 3D Printing Service</h2>
         <div style="color: var(--text-secondary); line-height: 1.6;">
-            <p style="margin-bottom: 1rem;">This project involves predicting house prices in California using a Support Vector Regression (SVR) machine learning model.</p>
-            <p style="margin-bottom: 1rem;">The dataset features attributes like location, median income, and housing age. I implemented a complete data preprocessing pipeline, including feature scaling with StandardScaler.</p>
-            <p style="margin-bottom: 1rem;">To optimize model performance, I utilized GridSearch for hyperparameter tuning, finding the best combination of parameters (C, epsilon, kernel) for the SVR model. The project demonstrates a fundamental understanding of supervised learning, data preparation, and model evaluation using Scikit-Learn.</p>
+            <img src="assets/images/projects/prinnthub.png" alt="prINNthub Screenshot" style="width: 100%; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid var(--card-border);">
+            <p style="margin-bottom: 1rem;">Co-founded an on-demand 3D printing platform and service based in Innsbruck (Austria) and Nuremberg (Germany).</p>
+            <p style="margin-bottom: 1rem;">I developed the customer-facing web platform, enabling users to submit 3D printing requests, upload 3D models (.stl, .step, .obj), select materials and finishes, and manage their production orders online.</p>
+            <p style="margin-bottom: 1.5rem;">The project combines modern web engineering with physical additive manufacturing and rapid prototyping workflows.</p>
             <div style="margin-top: 1.5rem;">
-                <a href="https://github.com/kunzechriz/L-MCI-BSc-Data-Science-I" target="_blank" class="btn" style="text-decoration: none; display: inline-block;">View Repository on GitHub</a>
+                <a href="https://www.prinnthub.com/" target="_blank" rel="noopener noreferrer" class="btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website (prinnthub.com)
+                </a>
             </div>
         </div>
     `;
